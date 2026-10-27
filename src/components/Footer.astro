@@ -1,0 +1,198 @@
+---
+const { config } = Astro.props;
+---
+
+<footer
+  class="relative isolate mt-[90px] sm:mt-[130px] md:mt-[170px] w-full overflow-visible bg-footer text-foreground"
+>
+  <!-- Decorative Neon Wave Background -->
+  <div
+    class="absolute left-0 bottom-full w-full h-[90px] sm:h-[150px] md:h-[210px] lg:h-[250px] overflow-hidden pointer-events-none"
+  >
+    <svg
+      viewBox="0 0 1440 300"
+      preserveAspectRatio="none"
+      class="w-full h-full"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <defs>
+        <linearGradient id="waveOne" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="hsl(var(--primary))"></stop>
+          <stop offset="50%" stop-color="hsl(var(--secondary))"></stop>
+          <stop offset="100%" stop-color="hsl(var(--accent))"></stop>
+        </linearGradient>
+
+        <linearGradient id="waveTwo" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="hsl(var(--secondary))"></stop>
+          <stop offset="50%" stop-color="hsl(var(--primary))"></stop>
+          <stop offset="100%" stop-color="hsl(var(--accent))"></stop>
+        </linearGradient>
+
+        <filter id="waveGlow">
+          <feGaussianBlur stdDeviation="9"></feGaussianBlur>
+        </filter>
+      </defs>
+
+      <path
+        d="M0 145 C180 30 260 55 420 150 S690 230 850 125 S1160 50 1440 155"
+        fill="none"
+        stroke="url(#waveOne)"
+        stroke-width="28"
+        opacity=".5"
+        filter="url(#waveGlow)"></path>
+
+      <path
+        d="M0 145 C180 30 260 55 420 150 S690 230 850 125 S1160 50 1440 155 L1440 300 L0 300 Z"
+        fill="var(--footerSvgA)"
+        opacity=".5"></path>
+
+      <path
+        d="M0 190 C180 105 280 75 440 160 S700 225 880 155 S1170 80 1440 190 L1440 300 L0 300 Z"
+        fill="url(#waveTwo)"
+        opacity=".65"></path>
+
+      <path
+        d="M0 215 C170 155 260 130 410 180 S700 245 900 180 S1190 120 1440 215 L1440 300 L0 300 Z"
+        fill="var(--footer)"></path>
+
+      <path
+        d="M0 145 C180 30 260 55 420 150 S690 230 850 125 S1160 50 1440 155"
+        fill="none"
+        stroke="url(#waveOne)"
+        stroke-width="3"></path>
+
+      <path
+        d="M0 190 C180 105 280 75 440 160 S700 225 880 155 S1170 80 1440 190"
+        fill="none"
+        stroke="url(#waveTwo)"
+        stroke-width="2"></path>
+    </svg>
+  </div>
+
+  <!-- Bottom Decorative Waves -->
+  <div
+    class="absolute inset-x-0 bottom-0 h-[65px] sm:h-[100px] md:h-[140px] pointer-events-none overflow-hidden opacity-60"
+  >
+    <svg
+      viewBox="0 0 1440 180"
+      preserveAspectRatio="none"
+      class="w-full h-full"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 15 C160 65 220 145 430 120 S700 80 900 135 S1230 80 1440 10 L1440 180 L0 180 Z"
+        fill="var(--footerSvgA)"
+        opacity=".45"></path>
+
+      <path
+        d="M0 15 C160 65 220 145 430 120 S700 80 900 135 S1230 80 1440 10"
+        fill="none"
+        stroke="hsl(var(--primary))"
+        stroke-width="2"></path>
+    </svg>
+  </div>
+
+  <!-- Decorative Dots -->
+  <div
+    class="absolute left-[7%] top-[25%] grid grid-cols-5 gap-3 opacity-40 pointer-events-none"
+  >
+    {
+      Array.from({ length: 20 }).map(() => (
+        <span class="w-1 h-1 rounded-full bg-primary" />
+      ))
+    }
+  </div>
+
+  <div
+    class="absolute right-[7%] top-[25%] grid grid-cols-5 gap-3 opacity-40 pointer-events-none"
+  >
+    {
+      Array.from({ length: 20 }).map(() => (
+        <span class="w-1 h-1 rounded-full bg-secondary" />
+      ))
+    }
+  </div>
+
+  <!-- Main Footer Content -->
+  <div
+    class="relative z-10 max-w-6xl mx-auto px-4 sm:px-5 pt-6 sm:pt-10 md:pt-12 pb-5 sm:pb-7 flex flex-col items-center text-center"
+  >
+    <!-- Branding -->
+    <div class="space-y-1.5 sm:space-y-2">
+      <h2
+        class="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent"
+      >
+        Hridoy Ahmed
+      </h2>
+
+      <p
+        class="text-xs sm:text-sm md:text-base tracking-wider sm:tracking-[0.15em] text-foreground/80"
+      >
+        Aspiring Full Stack Developer
+      </p>
+    </div>
+
+    <!-- Code Divider -->
+    <div
+      class="flex items-center justify-center gap-4 sm:gap-6 my-5 sm:my-7 md:my-8 w-full max-w-[220px] sm:max-w-xs"
+    >
+      <span class="h-px flex-1 bg-gradient-to-r from-transparent to-primary"
+      ></span>
+
+      <span class="text-xl sm:text-2xl font-bold text-primary">&lt;/&gt;</span>
+
+      <span class="h-px flex-1 bg-gradient-to-l from-transparent to-secondary"
+      ></span>
+    </div>
+
+    <!-- Social Links -->
+    <div
+      class="flex flex-wrap justify-center items-center gap-3 sm:gap-5 md:gap-7"
+    >
+      {
+        config.links &&
+          config.links.map(
+            (link: { url: string; label: string; icon: string }) => (
+              <a
+                href={link.url}
+                title={link.label}
+                aria-label={link.label}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full border border-primary/70 bg-background/80 flex items-center justify-center text-primary shadow-[0_0_15px_hsl(var(--primary)/0.15)] hover:border-secondary hover:text-secondary hover:shadow-[0_0_25px_hsl(var(--secondary)/0.35)] hover:-translate-y-1 hover:scale-110 transition-all duration-300"
+              >
+                <span class="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 flex items-center justify-center [&>svg]:w-full [&>svg]:h-full">
+                  <Fragment set:html={link.icon} />
+                </span>
+              </a>
+            ),
+          )
+      }
+    </div>
+
+    <!-- Copyright Divider -->
+    <div class="w-full flex items-center gap-3 sm:gap-5 my-5 sm:my-7 md:my-9">
+      <span
+        class="h-px flex-1 bg-gradient-to-r from-transparent via-primary/60 to-secondary/60"
+      ></span>
+
+      <span class="text-lg sm:text-2xl text-secondary">✦</span>
+
+      <span
+        class="h-px flex-1 bg-gradient-to-l from-transparent via-primary/60 to-secondary/60"
+      ></span>
+    </div>
+
+    <!-- Copyright -->
+    <p
+      class="text-[10px] sm:text-xs md:text-sm tracking-wide sm:tracking-widest text-foreground/65"
+    >
+      {config.copyrightText}
+    </p>
+
+    <p class="mt-2 text-[10px] sm:text-xs text-foreground/50">
+      Designed & Built by Hridoy Ahmed
+    </p>
+  </div>
+</footer>

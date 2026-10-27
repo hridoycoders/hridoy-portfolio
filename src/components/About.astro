@@ -1,0 +1,279 @@
+---
+import { Image } from "astro:assets";
+import { Avatar_250 } from "@assets/images";
+import { SectionTitle } from "@components/UI";
+
+const { config } = Astro.props;
+
+const infoCards = [
+  {
+    title: "Education",
+    value: "Diploma in Engineering in Computer Science & Technology (CST)",
+    detail: "Bogura Polytechnic Institute · 2025–Present",
+    icon: "🎓",
+  },
+  {
+    title: "Experience",
+    value: "Personal Projects",
+    detail: "Hands-on Web Development Practice",
+    icon: "💻",
+  },
+  {
+    title: "Location",
+    value: "Bogura, Bangladesh",
+    detail: "Currently pursuing my diploma",
+    icon: "📍",
+  },
+  {
+    title: "Languages",
+    value: "Bangla & English",
+    detail: "Communication & Learning",
+    icon: "🌐",
+  },
+];
+---
+
+<section id="about" class="w-full min-h-screen py-4 pt-14 bg-background">
+  <SectionTitle
+    title="About Me"
+    color="primary"
+    className="min-h-screen flex flex-col justify-center"
+  >
+    <div class="flex_center flex-col lg:flex-row w-full py-10 gap-8">
+      <!-- Profile Image -->
+      <div class="about-image-wrapper Fade_Up lg:mx-14">
+        <div class="avatar-ring"></div>
+        <div class="avatar-glow"></div>
+
+        <div class="avatar-inner">
+          <Image
+            src={Avatar_250}
+            alt="About Avatar"
+            class="about-avatar rounded-full"
+            width={340}
+            height={340}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+
+      <!-- About Content -->
+      <div
+        class="Fade_Up w-full md:w-[80%] lg:w-[60%] flex justify-center items-start flex-col gap-5 lg:border-l border-primary py-8 lg:pl-10"
+      >
+        <div>
+          <h2 class="text-[1.5em] font-bold">Hey there! 👋🏻</h2>
+        </div>
+
+        {
+          config.description?.map((para: string) => (
+            <p class="Fade_Up text-justify leading-7">{para}</p>
+          ))
+        }
+
+        <!-- Information Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full mt-3">
+          {
+            infoCards.map((item, index) => (
+              <div
+                class="about-info-card rounded-xl border border-primary/20 bg-secondary/10 p-4"
+                style={`--card-index: ${index}`}
+              >
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="text-xl">{item.icon}</span>
+                  <h3 class="font-semibold text-primary">{item.title}</h3>
+                </div>
+
+                <p class="font-semibold text-sm leading-6">{item.value}</p>
+
+                <p class="text-sm opacity-70 mt-2">{item.detail}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </SectionTitle>
+</section>
+
+<style>
+  /* Professional Image Layout */
+  .about-image-wrapper {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    isolation: isolate;
+    transition: transform 350ms ease;
+  }
+
+  /* Minimal Border */
+  .avatar-ring {
+    position: absolute;
+    inset: -6px;
+    border: 1.5px solid hsla(var(--primary), 0.4);
+    border-radius: 50%;
+    transition: all 350ms ease;
+    z-index: -1;
+  }
+
+  /* Subtle Shadow Glow */
+  .avatar-glow {
+    position: absolute;
+    inset: 8px;
+    border-radius: 50%;
+    background: hsla(var(--primary), 0.12);
+    filter: blur(28px);
+    opacity: 0.5;
+    z-index: -2;
+    transition: opacity 350ms ease;
+  }
+
+  /* Image Container */
+  .avatar-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 7px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: var(--background);
+    border: 1px solid hsla(var(--primary), 0.2);
+    box-shadow:
+      0 8px 20px rgba(0, 0, 0, 0.08),
+      0 18px 40px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 350ms ease;
+  }
+
+  /* Profile Image */
+  .about-avatar {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 50%;
+    transform: scaleX(-1);
+    transition:
+      transform 450ms ease,
+      filter 450ms ease;
+  }
+
+  /* Smooth Hover */
+  .about-image-wrapper:hover {
+    transform: translateY(-4px);
+  }
+
+  .about-image-wrapper:hover .avatar-inner {
+    box-shadow:
+      0 12px 25px rgba(0, 0, 0, 0.1),
+      0 22px 45px rgba(0, 0, 0, 0.13);
+  }
+
+  .about-image-wrapper:hover .avatar-ring {
+    inset: -9px;
+    border-color: hsl(var(--primary));
+  }
+
+  .about-image-wrapper:hover .about-avatar {
+    transform: scaleX(-1) scale(1.04);
+    filter: brightness(1.03);
+  }
+
+  .about-image-wrapper:hover .avatar-glow {
+    opacity: 0.8;
+  }
+
+  /* Information Cards */
+  .about-info-card {
+    min-width: 0;
+    background: var(--cardGradient);
+    transition:
+      transform 300ms ease,
+      border-color 300ms ease,
+      box-shadow 300ms ease;
+    animation: cardAppear 550ms ease both;
+    animation-delay: calc(var(--card-index) * 100ms);
+  }
+
+  .about-info-card:hover {
+    transform: translateY(-6px);
+    border-color: hsl(var(--primary));
+    box-shadow: 0 12px 28px hsla(var(--primary), 0.12);
+  }
+
+  /* Animations */
+  @keyframes cardAppear {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+    .about-image-wrapper {
+      width: 340px;
+      height: 340px;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .about-image-wrapper {
+      width: 245px;
+      height: 245px;
+      margin-bottom: 35px;
+    }
+
+    .about-info-card {
+      padding: 17px;
+    }
+  }
+
+  /* Accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .avatar-ring,
+    .about-info-card {
+      animation: none;
+    }
+
+    .about-avatar,
+    .avatar-inner,
+    .avatar-glow,
+    .about-info-card {
+      transition: none;
+    }
+  }
+
+  /* Professional Floating Image Animation */
+  .about-image-wrapper {
+    animation: profileFloat 4s ease-in-out infinite;
+  }
+
+  @keyframes profileFloat {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Disable animation for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .about-image-wrapper {
+      animation: none;
+    }
+  }
+</style>
