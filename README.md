@@ -1,83 +1,146 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/530c2667-5dbc-4df3-824c-de37f975c833/deploy-status)](https://app.netlify.com/sites/chiragchrg/deploys)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# 🚀 Hridoy Ahmed | Personal Portfolio
 
-##### Created : 09/04/2023
-
-# ChiragChrg | My Personal Portfolio | Fullstack Web Developer
-Welcome to ChiragChrg's portfolio website, your gateway to the dynamic world of full stack web development. Immerse yourself in the digital realm where my expertise in coding and design converges to create extraordinary online experiences.
+A modern, responsive personal portfolio built to showcase my skills, projects, and journey as an aspiring Full Stack Developer.
 
 ## 💻 Preview
 ![Portfolio Preview](public/Mockup_Preview.png)
 
-## 🚀 Live Demo  
-Check out the current live version of the portfolio:  
-👉 **https://chiragchrg.netlify.app**
+## 🌐 About Me
 
-Preview the upcoming version here (Nightly Build - [astro branch](https://github.com/ChiragChrg/Portfolio/tree/astro)):  
-👉 **https://chiragchrg-nightly.netlify.app/**
+Hi! I'm **Hridoy Ahmed**, an aspiring Full Stack Developer passionate about building modern, responsive, and user-friendly web applications.
 
-### 🚧 Nightly Build in Progress  
-A fresh version is under active development—this isn’t just a revamp but a more extensible architecture designed for quick personalization:
+I enjoy learning new technologies, solving problems, and turning creative ideas into real-world projects.
 
-- **Templatized Setup** – Fork and adapt your own version in minutes.
-- **Custom Theme System** – Try different themes (with light/dark variants) using a theme selection dropdown—**available only in the nightly build for preview purposes.**
-- **Production Behavior** – In the stable version, the theme dropdown is disabled; a single static theme is used based on your choice in `src/config/portfolio.config.ts`.
-- **Quality Enhancements** – Performance boosts and UI refinements all around.
+- 💻 Currently learning Web Development
+- 🚀 Interested in Frontend & Full Stack Development
+- 📚 Always exploring new technologies
+- 🎯 Focused on improving my development skills
 
-<br/>
+## ✨ Features
 
-## 📚 Tools and Tech Stack
+- Modern and responsive design
+- Dark and light theme support
+- Multiple color themes
+- Smooth animations and transitions
+- Interactive navigation
+- Skills and technology showcase
+- Featured projects with live demos
+- Project details pages
+- Resume download option
+- Contact section
+- Responsive across desktop, tablet, and mobile devices
 
-The portfolio leverages the following technologies:
-<div align="center">
-      <a href="https://astro.build/" title="Astro"><img src="https://skillicons.dev/icons?i=astro" alt="Astro" width="40"/></a>&emsp;
-      <a href="https://preactjs.com/" title="Preact.js"><img src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/preactjs.svg" alt="Preact.js" width="40"/></a>&emsp;
-      <a href="https://www.typescriptlang.org/docs/" title="TypeScript"><img src="https://skillicons.dev/icons?i=typescript" alt="TypeScript" width="40"/></a>&emsp;
-      <a href="https://tailwindcss.com/docs/installation" title="TailwindCSS"><img src="https://skillicons.dev/icons?i=tailwind" alt="TailwindCSS" width="40"/></a>&emsp;
-      <a href="https://greensock.com/docs/" title="GSAP"><img src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/gsap.svg" alt="GSAP" width="40"/></a>&emsp;
-</div>
+## 🛠️ Technologies Used
 
-## 🗼 LightHouse Audit
-![LightHouse Audit Preview](public/LightHouse_Audit.jpg)
+| Category | Technologies |
+|---|---|
+| Framework | Astro |
+| UI Library | Preact |
+| Styling | Tailwind CSS |
+| Language | JavaScript, TypeScript |
+| Animation | GSAP |
+| Smooth Scrolling | Lenis |
+| Icons | Lucide Preact |
+| Contact | EmailJS |
+| Tools | Git, GitHub, VS Code |
+| Package Manager | Bun |
 
-## 🛠️ Installation and Setup
+## 🚀 Featured Projects
 
-Follow these steps to run the project locally:
+### 1. Bazar Dor
+A modern online marketplace interface for exploring products and checking market prices.
 
-### Steps
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/ChiragChrg/portfolio.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd portfolio
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-4. Start the development server:
-   ```bash
-   npm run dev
-   ```
+- **Live Demo:** https://bazar-dor-market.vercel.app/
+- **GitHub:** https://github.com/hridoycoders/bazar-dor
+- **Technologies:** Next.js, TypeScript, Tailwind CSS
 
-## 🌟 Features
+### 2. Fit-Log
+A workout planning application for managing and saving personal workout plans.
 
-- **Optimized Performance**: Built with Astro for lightning-fast load times.
-- **Responsive Design**: Tailored for all devices using TailwindCSS.
-- **Interactive Animations**: Powered by GSAP for smooth transitions.
-- **SEO Friendly**: Enhanced visibility with Astro SEO integration.
-- **Dynamic Components**: Utilizes Preact for modular and reusable UI elements.
+- **Live Demo:** https://fit-log-workout.vercel.app/
+- **GitHub:** https://github.com/hridoycoders/fit-log
+- **Technologies:** Next.js, TypeScript, Tailwind CSS, REST API
+
+### 3. DevStack
+A developer-focused technology directory featuring useful tools and technologies.
+
+- **Live Demo:** https://devstack-pher.netlify.app/
+- **GitHub:** https://github.com/hridoycoders/DevStack-pHero
+- **Technologies:** React, JavaScript, Tailwind CSS
+
+## ⚙️ Getting Started
+
+Follow these steps to run the project locally.
+
+### Prerequisites
+
+- Node.js
+- Bun
+- Git
+
+### Installation
+
+**1. Clone the repository**
+
+```bash
+git clone YOUR_REPOSITORY_URL
+```
+
+**2. Navigate to the project directory**
+
+```bash
+cd Portfolio
+```
+
+**3. Install dependencies**
+
+```bash
+bun install
+```
+
+**4. Start the development server**
+
+```bash
+bun run dev
+```
+
+**5. Build for production**
+
+```bash
+bun run build
+```
+
+The production-ready files will be generated inside the `dist` directory.
+
+## 📁 Project Structure
+
+```text
+Portfolio/
+├── public/
+├── scripts/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── config/
+│   ├── layouts/
+│   └── pages/
+├── astro.config.mjs
+├── eslint.config.js
+├── package.json
+└── tsconfig.json
+```
+
+## 📬 Connect With Me
+
+- **GitHub:** [@hridoycoders](https://github.com/hridoycoders)
+- **LinkedIn:** [Connect with me on LinkedIn](https://www.linkedin.com/)
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).  
-You may use, copy, modify, and distribute this project for any purpose, provided that you:
+This project is created for personal portfolio and educational purposes.
 
-- Include the original copyright.
-- Retain the MIT license in all copies or substantial portions of the software.
+---
 
-Attribution is appreciated but not required. If you use this project, consider giving visible credit is given to **[ChiragChrg](https://github.com/ChiragChrg)** somewhere within your project (e.g., in the README, footer, or documentation).
+⭐ If you like this project, feel free to explore my repositories and projects.
 
-Proper attribution helps acknowledge the effort invested in this project and upholds the values of integrity, transparency, and the open‑source community.
+**Made with ❤️ by Hridoy Ahmed**
