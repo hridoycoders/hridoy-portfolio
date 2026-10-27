@@ -5,34 +5,34 @@ import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
-    experimental: {
-      svgOptimizer: svgoOptimizer()
+  experimental: {
+    svgOptimizer: svgoOptimizer(),
   },
   integrations: [
     preact(),
     compress({
       CSS: true,
-      HTML: true,
+      HTML: false,
       JavaScript: true,
-    })
+    }),
   ],
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
   },
   build: {
     // Enable CSS code splitting
     cssCodeSplit: true,
-    inlineStylesheets: 'auto',
+    inlineStylesheets: "auto",
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
           // Optimize CSS file naming for better caching
-          if (assetInfo.name.endsWith('.css')) {
-            return 'styles/[name].[hash][extname]';
+          if (assetInfo.name.endsWith(".css")) {
+            return "styles/[name].[hash][extname]";
           }
-          return '[name].[hash][extname]';
-        }
-      }
-    }
-  }
+          return "[name].[hash][extname]";
+        },
+      },
+    },
+  },
 });
